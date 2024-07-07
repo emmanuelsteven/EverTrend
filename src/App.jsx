@@ -1,10 +1,12 @@
-import Navbar from "./components/Navbar/Navbar"
+import Navbar from "./components/Navbar/Navbar";
+import Heropage from "./components/Heropage/Heropage";
 
-Navbar
+
 const App = () => {
   return (
     <div>
       < Navbar />
+      <Heropage />
     </div>
 
   )
