@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
 import Heropage from "./components/Heropage/Heropage";
+import Categories from "./components/Categories/Categories";
 
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
     <div>
       < Navbar />
       <Heropage />
+      <Categories />
     </div>
 
   )
