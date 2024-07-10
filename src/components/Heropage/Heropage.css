@@ -1,0 +1,53 @@
+.hero {
+  height: 680px;
+  margin-top: 8rem;
+  /* border-radius: 4%; */
+  background-image: url("../../assets/imgs/editted.png"),
+    linear-gradient(360deg, #0a0c0f 0%, #2c3e50 55%);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.hero > .flex {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 70%;
+}
+
+.hero .content {
+  width: 640px;
+  margin-top: 15rem;
+}
+
+.spaced-words {
+  display: flex;
+  align-items: center;
+}
+
+.spaced-letters {
+  letter-spacing: 0.5em;
+  font-weight: 300; /* Adjust the value as needed */
+  font-size: 2.7rem;
+  font-weight: 300;
+  line-height: 2.813rem;
+  letter-spacing: 0.58em;
+}
+
+.word-gap {
+  width: 20px; /* Adjust the gap between the words as needed */
+}
+
+.content p {
+  margin: 0.5rem 0;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 60.78px;
+  color: #2ecc71;
+  font-weight: 700;
+}
+.hero > .container {
+  padding: 30px 2px;
+}
