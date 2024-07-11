@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <section className="footer">
-      <p>2024@allrightsreserved</p>
+      <p>@2024,All Rights Reserved</p>
       <ul className="socials">
         <li>
           <a href="">

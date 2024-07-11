@@ -19,18 +19,11 @@
   margin-top: 10px;
 }
 
-.products > div {
-  background-color: #fff;
-  text-align: center;
-  width: 100%;
-  object-fit: cover;
-}
-
 .products > .card1 {
   background-color: #fff;
   text-align: center;
   width: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
 }
@@ -70,46 +63,49 @@
 }
 
 .cardimage {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  color: #333;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
   height: 404px;
-  overlay: #f5f5f5;
-  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.cardimage img {
+  width: 100%;
+  height: auto;
+}
+
+.mic {
+  background-image: url("../../assets/imgs/microphone.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .earpodImage {
   background-image: url("../../assets/imgs/earpod2.png");
-  background-size: 202px 225px;
-}
-
-.micImage {
-  background-image: url("../../assets/imgs/microphone.jpg");
   background-size: cover;
-  background-position: 0 0 -40px 0;
+  background-position: center;
 }
 
-.smartwatch2Image {
-  background-image: url("../../assets/imgs/smart1.png");
-  background-size: 200px 256px;
-}
-
-.smartwatchImage {
+.smart2 {
   background-image: url("../../assets/imgs/smart2.png");
-  background-size: 200px 330px;
+  background-size: cover;
+  background-position: center;
 }
 
-.laptopImage {
+.laptop {
   background-image: url("../../assets/imgs/laptop2.jpg");
   background-size: cover;
+  background-position: center;
 }
 
-.smartwatch3Image {
+.watch2 {
+  background-image: url("../../assets/imgs/smart1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.watch {
   background-image: url("../../assets/imgs/Smart3.png");
-  background-size: 200px 330px;
+  background-size: cover;
+  background-position: center;
 }
 
 .cardtext h5 {

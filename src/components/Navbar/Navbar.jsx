@@ -1,7 +1,8 @@
-import "./Navbar.css";
-import { IoSearchOutline } from "react-icons/io5";
+import React from "react";
 import { IoMdCart } from "react-icons/io";
-const Navbar = () => {
+import "./Navbar.css";
+
+const Navbar = ({ cartItems }) => {
   return (
     <div className="navbar">
       <div className="container flex">
@@ -19,17 +20,15 @@ const Navbar = () => {
             <li>
               <a href="#">Categories</a>
             </li>
-            <li>
-              <a href="#">Contact us</a>
-            </li>
           </ul>
         </nav>
         <div className="icons flex">
-          <IoSearchOutline className="ikon" />
           <IoMdCart className="ikon" />
+          <span className="cart-count">{cartItems.length}</span>
         </div>
       </div>
     </div>
   );
 };
+
 export default Navbar;

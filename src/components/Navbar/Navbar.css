@@ -23,6 +23,7 @@ nav > .flex {
 
 .icons {
   gap: 2rem;
+  position: relative;
 }
 
 .logo a,
@@ -45,5 +46,14 @@ nav > .flex {
   .navbar .container {
     max-width: 100%;
     padding: 0 40px;
+  }
+
+  .cart-count {
+    color: red;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    position: absolute;
+    top: -2px;
+    right: -5px;
   }
 }
