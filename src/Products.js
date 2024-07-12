@@ -1,4 +1,4 @@
-import Mainwatch from "./assets/imgs/Smart34.png";
+import Mainwatch from "./assets/imgs/smart34.png";
 import headphone from "./assets/imgs/headphone.png";
 import lappy from "./assets/imgs/Laptop1.png";
 import mic from "./assets/imgs/microphone.jpg";
