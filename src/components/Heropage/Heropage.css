@@ -1,7 +1,5 @@
 .hero {
   height: 680px;
-  margin-top: 8rem;
-  /* border-radius: 4%; */
   background-image: url("../../assets/imgs/editted.png"),
     linear-gradient(360deg, #0a0c0f 0%, #2c3e50 55%);
   background-size: contain;
@@ -29,7 +27,7 @@
 
 .spaced-letters {
   letter-spacing: 0.5em;
-  font-weight: 300; /* Adjust the value as needed */
+  font-weight: 300;
   font-size: 2.7rem;
   font-weight: 300;
   line-height: 2.813rem;
@@ -37,7 +35,7 @@
 }
 
 .word-gap {
-  width: 20px; /* Adjust the gap between the words as needed */
+  width: 20px;
 }
 
 .content p {
@@ -50,4 +48,89 @@
 }
 .hero > .container {
   padding: 30px 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero > .flex {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+
+  .spaced-letters {
+    font-size: 2rem;
+    letter-spacing: 0.5em;
+  }
+
+  .content p {
+    font-size: 2rem;
+  }
+
+  .word-gap {
+    width: 10px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .hero > .container {
+    padding: 20px 0;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero > .flex {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+
+  .spaced-letters {
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .word-gap {
+    width: 10px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .hero > .container {
+    padding: 20px 0;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
 }

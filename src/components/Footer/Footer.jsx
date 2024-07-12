@@ -1,5 +1,4 @@
 import "./Footer.css";
-// import { RiFacebookCircleLine } from "react-icons/ri";
 import {
   RiWhatsappLine,
   RiInstagramLine,
@@ -13,22 +12,22 @@ const Footer = () => {
       <p>@2024,All Rights Reserved</p>
       <ul className="socials">
         <li>
-          <a href="">
+          <a href="https://www.whatsapp.com/" target="_blank">
             <RiWhatsappLine />
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://web.facebook.com/" target="_blank">
             <RiFacebookCircleLine />
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://x.com/" target="_blank">
             <RiTwitterLine />
           </a>
         </li>
         <li>
-          <a href="">
+          <a href="https://www.instagram.com/" target="_blank">
             <RiInstagramLine />
           </a>
         </li>

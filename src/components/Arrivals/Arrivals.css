@@ -86,7 +86,7 @@
   background-size: 202px 225px;
 }
 
-.micImage {
+.mic-Image {
   background-image: url("../../assets/imgs/microphone.jpg");
   background-size: cover;
   background-position: 0 0 -40px 0;
@@ -127,4 +127,70 @@
   gap: 20px;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products > div {
+    width: 100%;
+  }
+
+  .cardimage {
+    height: 300px;
+  }
+
+  .cardtext h5 {
+    font-size: 16px;
+  }
+
+  .cardtext p {
+    font-size: 14px;
+  }
+
+  .cardtext :nth-child(3) {
+    gap: 10px;
+  }
+
+  .products button {
+    padding: 0.2rem 0.5rem;
+  }
+
+  .products h5 {
+    font-size: 16px;
+  }
+
+  .products p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  .arrivals {
+    padding: 20px 10px 120px 10px;
+  }
+  .products {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .earpodImage {
+    background-size: contain; /* This scales the image to be fully visible */
+    width: 150px;
+    height: 180px;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 480px) {
+  .earpodImage {
+    background-size: contain; /* This scales the image to be fully visible */
+    width: 100px;
+    height: 120px;
+  }
 }

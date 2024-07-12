@@ -1,56 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Categories.css";
-import Mainwatch from "../../assets/imgs/Smart3.png";
-import headphone from "../../assets/imgs/headphone.png";
-import lappy from "../../assets/imgs/Laptop1.png";
-import mic from "../../assets/imgs/microphone.jpg";
-import Tv from "../../assets/imgs/tv.png";
-import mixer from "../../assets/imgs/Iron.png";
-
-const Products = [
-  {
-    title: "Smart Watch wireless",
-    currentPrice: "#300,000",
-    originalPrice: "#500,000",
-    img: Mainwatch,
-    class: "resize3",
-  },
-  {
-    title: "Gaming Headset",
-    currentPrice: "#50,000",
-    originalPrice: "#500,000",
-    img: headphone,
-    class: "resize3",
-  },
-  {
-    title: "Corei7 Laptop",
-    currentPrice: "#300,000",
-    originalPrice: "#500,000",
-    img: lappy,
-    class: "resize3",
-  },
-  {
-    title: "binatone mixer",
-    currentPrice: "#300,000",
-    originalPrice: "#500,000",
-    img: mixer,
-    class: "resize3",
-  },
-  {
-    title: "samsung tv",
-    currentPrice: "#300,000",
-    originalPrice: "#500,000",
-    img: Tv,
-    class: "resize3",
-  },
-  {
-    title: "Studio Mic",
-    currentPrice: "#300,000",
-    originalPrice: "#500,000",
-    img: mic,
-    class: "resize3",
-  },
-];
+import { Products } from "../../Products";
 
 const Categories = ({ addToCart }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -72,7 +22,7 @@ const Categories = ({ addToCart }) => {
   console.log("Categories component rendered");
 
   return (
-    <section className="categories">
+    <section id="categories" className="categories">
       <h3>Featured Categories</h3>
       <div className="slider-container">
         <div className="slider">
