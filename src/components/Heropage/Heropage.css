@@ -1,0 +1,136 @@
+.hero {
+  height: 680px;
+  background-image: url("../../assets/imgs/editted.png"),
+    linear-gradient(360deg, #0a0c0f 0%, #2c3e50 55%);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.hero > .flex {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  width: 70%;
+}
+
+.hero .content {
+  width: 640px;
+  margin-top: 15rem;
+}
+
+.spaced-words {
+  display: flex;
+  align-items: center;
+}
+
+.spaced-letters {
+  letter-spacing: 0.5em;
+  font-weight: 300;
+  font-size: 2.7rem;
+  font-weight: 300;
+  line-height: 2.813rem;
+  letter-spacing: 0.58em;
+}
+
+.word-gap {
+  width: 20px;
+}
+
+.content p {
+  margin: 0.5rem 0;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 60.78px;
+  color: #2ecc71;
+  font-weight: 700;
+}
+.hero > .container {
+  padding: 30px 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: auto;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero > .flex {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+
+  .spaced-letters {
+    font-size: 2rem;
+    letter-spacing: 0.5em;
+  }
+
+  .content p {
+    font-size: 2rem;
+  }
+
+  .word-gap {
+    width: 10px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .hero > .container {
+    padding: 20px 0;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .hero > .flex {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+
+  .spaced-letters {
+    font-size: 1.5rem;
+    letter-spacing: 0.5em;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .word-gap {
+    width: 10px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .hero > .container {
+    padding: 20px 0;
+  }
+
+  .hero .content {
+    margin-top: 10rem;
+  }
+}

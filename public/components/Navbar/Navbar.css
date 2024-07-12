@@ -1,0 +1,51 @@
+.navbar > .flex {
+    justify-content: space-between;
+    height: 75px;
+    background-color: #2C3E50;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 100;
+    } 
+    
+    
+    .ikon {
+        padding: .6rem;
+        background-color: #2ECC71;
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        cursor: pointer;
+    }
+    
+    nav > .flex{
+        gap: 2rem;
+    }
+    
+    .icons{
+        gap: 2rem;
+    }
+    
+    .logo a ,
+    .flex a {
+        color:#2ECC71 ;
+    }
+    
+    @media screen and (min-width: 768px) {
+        .Navbar {
+           background-color:transparent ;
+           backdrop-filter: blur(4px);
+           color: #000;
+           height: 70px;
+           position: fixed; 
+           width: 100%; 
+           top: 0; 
+           z-index: 100;
+        }
+    
+    
+.navbar .container{
+    max-width: 100%;
+    padding: 0 40px;
+  }
+    }
