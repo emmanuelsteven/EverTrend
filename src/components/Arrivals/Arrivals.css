@@ -27,17 +27,25 @@
 }
 
 .products > .card1 {
+  width: 100%;
+  height: 600px;
   background-color: #fff;
   text-align: center;
-  width: 100%;
-  /* object-fit: cover; */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .products img {
-  height: auto;
   width: 100%;
+  height: auto;
+  object-fit: cover;
+  flex-wrap: wrap;
 }
 
 .products h5 {
@@ -69,47 +77,11 @@
   background-color: #2c3e50;
 }
 
-.cardimage {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  color: #333;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 404px;
-  overlay: #f5f5f5;
-  margin-bottom: 10px;
-}
-
-.earpodImage {
-  background-image: url("../../assets/imgs/earpod2.png");
-  background-size: 202px 225px;
-}
-
-.mic-Image {
-  background-image: url("../../assets/imgs/microphone.jpg");
-  background-size: cover;
-  background-position: 0 0 -40px 0;
-}
-
-.smartwatch2Image {
-  background-image: url("../../assets/imgs/smart1.png");
-  background-size: 200px 256px;
-}
-
-.smartwatchImage {
-  background-image: url("../../assets/imgs/smart2.png");
-  background-size: 200px 330px;
-}
-
-.laptopImage {
-  background-image: url("../../assets/imgs/laptop2.jpg");
-  background-size: cover;
-}
-
-.smartwatch3Image {
-  background-image: url("../../assets/imgs/Smart3.png");
-  background-size: 200px 330px;
+*/ .cardtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .cardtext h5 {
@@ -129,68 +101,19 @@
   align-items: center;
 }
 
-@media screen and (max-width: 768px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .products > div {
-    width: 100%;
-  }
-
-  .cardimage {
-    height: 300px;
-  }
-
-  .cardtext h5 {
-    font-size: 16px;
-  }
-
-  .cardtext p {
-    font-size: 14px;
-  }
-
-  .cardtext :nth-child(3) {
-    gap: 10px;
-  }
-
-  .products button {
-    padding: 0.2rem 0.5rem;
-  }
-
-  .products h5 {
-    font-size: 16px;
-  }
-
-  .products p {
-    font-size: 14px;
-  }
+.pagination button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
-/* Mobile styles */
-@media screen and (max-width: 480px) {
-  .arrivals {
-    padding: 20px 10px 120px 10px;
-  }
-  .products {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+.pagination button.active {
+  background-color: #2ecc71;
+  color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-  .earpodImage {
-    background-size: contain; /* This scales the image to be fully visible */
-    width: 150px;
-    height: 180px;
-  }
-}
-
-/* Mobile styles */
-@media screen and (max-width: 480px) {
-  .earpodImage {
-    background-size: contain; /* This scales the image to be fully visible */
-    width: 100px;
-    height: 120px;
-  }
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

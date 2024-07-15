@@ -1,65 +1,33 @@
-import React from "react";
 import "./Arrivals.css";
-import micImage from "../../assets/imgs/microphone.jpg";
-import earpodImage from "../../assets/imgs/earpod2.png";
-import smartwatchImage from "../../assets/imgs/smart2.png";
-import laptopImage from "../../assets/imgs/laptop2.jpg";
-import smartwatch2Image from "../../assets/imgs/smart1.png";
-import smartwatch3Image from "../../assets/imgs/Smart3.png";
 import { useStore } from "../../utils/storeContext";
+import { useState, useEffect } from "react";
 
 const Arrivals = () => {
   const { cartItems, addToCart } = useStore();
-  const projects = [
-    {
-      id: 1,
-      image: micImage,
-      title: "Microphone",
-      description: "Noise cancellation & bass",
-      price: 15000,
-      className: "mic-Image",
-    },
-    {
-      id: 2,
-      image: earpodImage,
-      title: "EarPod",
-      description: "Noise cancellation & thick bass",
-      price: 20000,
-      className: "earpodImage",
-    },
-    {
-      id: 3,
-      image: smartwatchImage,
-      title: "Smartwatch",
-      description: "iPhone black smart",
-      price: 70000,
-      className: "smartwatchImage",
-    },
-    {
-      id: 4,
-      image: laptopImage,
-      title: "Laptop",
-      description: "Corei7 15GB RAM",
-      price: 250000,
-      className: "laptopImage",
-    },
-    {
-      id: 5,
-      image: smartwatch2Image,
-      title: "Smart watch",
-      description: "iPhone two sim card watch",
-      price: 100000,
-      className: "smartwatch2Image",
-    },
-    {
-      id: 6,
-      image: smartwatch3Image,
-      title: "Smart watch",
-      description: "iPhone two sim card watch",
-      price: 100000,
-      className: "smartwatch3Image",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const itemsPerPage = 9;
+
+  const fetchProducts = (page) => {
+    fetch(
+      `/api/products?organization_id=e8464762ed974522901916e19534bbc4&reverse_sort=false&page=${page}&size=${itemsPerPage}&Appid=P8YBKXYR5Q3ZBBI&Apikey=e5bc75a2d1cf414c80cfb6cde20f091720240714131238325221`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setProjects(data.items);
+        setTotalPages(Math.ceil(data.total / itemsPerPage)); // assuming `data.total` gives the total number of items
+      })
+      .catch((error) => console.error("Error fetching products:", error));
+  };
+
+  useEffect(() => {
+    fetchProducts(currentPage);
+  }, [currentPage]);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <section className="arrivals">
@@ -70,17 +38,45 @@ const Arrivals = () => {
       <div className="products container">
         {projects.map((project) => (
           <div className="card1" key={project.id}>
-            <div className={`cardimage ${project.className}`}></div>
+            <img
+              src={`https://api.timbu.cloud/images/${project?.photos[0]?.url}`}
+              alt="product"
+            />
             <div className="cardtext">
-              <h5>{project.title}</h5>
+              <h5>{project.name}</h5>
               <p>{project.description}</p>
               <span>
-                <h5>{`₦ ${project.price}`}</h5>
+                <h5>{`₦ ${
+                  project?.current_price?.[0]?.NGN?.[0]?.toString() ?? "N/A"
+                }`}</h5>
                 <button onClick={() => addToCart(project)}>Add to cart</button>
               </span>
             </div>
           </div>
         ))}
+      </div>
+      <div className="pagination">
+        <button
+          onClick={() => handlePageChange(1)}
+          disabled={currentPage === 1}
+        >
+          &laquo;
+        </button>
+        {[...Array(totalPages).keys()].map((number) => (
+          <button
+            key={number + 1}
+            onClick={() => handlePageChange(number + 1)}
+            className={currentPage === number + 1 ? "active" : ""}
+          >
+            {number + 1}
+          </button>
+        ))}
+        <button
+          onClick={() => handlePageChange(totalPages)}
+          disabled={currentPage === totalPages}
+        >
+          &raquo;
+        </button>
       </div>
     </section>
   );
