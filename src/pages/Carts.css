@@ -193,6 +193,32 @@
   color: #c0392b;
 }
 
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 20px;
+}
+
+.clear-cart,
+.back-home {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.clear-cart:hover,
+.back-home:hover {
+  background-color: #27ae60;
+}
+
+.clear-cart {
+  background-color: #e74c3c;
+}
 @media screen and (max-width: 768px) {
   .cart-page {
     padding: 20px;

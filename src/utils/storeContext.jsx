@@ -7,8 +7,7 @@ export const StoreProvider = ({ children }) => {
     const savedCartItems = localStorage.getItem("cartItems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
-  const [totalCartItems, setTotalCartItems] = useState();
-
+  const [totalCartItems, setTotalCartItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -55,6 +54,10 @@ export const StoreProvider = ({ children }) => {
     );
   };
 
+  const clearCart = () => {
+    setCartItems([]);
+  };
+
   const calculateTotalPrice = () => {
     const totalPrice = cartItems.reduce(
       (acc, item) => acc + item.price * item.quantity,
@@ -62,6 +65,7 @@ export const StoreProvider = ({ children }) => {
     );
     setTotalPrice(totalPrice);
   };
+
   return (
     <StoreContext.Provider
       value={{
@@ -71,6 +75,7 @@ export const StoreProvider = ({ children }) => {
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        clearCart,
         totalPrice,
         calculateTotalPrice,
       }}

@@ -1,4 +1,3 @@
-import React from "react";
 import { IoMdCart } from "react-icons/io";
 import { Link } from "react-router-dom";
 import "./Navbar.css";

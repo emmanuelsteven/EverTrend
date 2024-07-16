@@ -1,0 +1,38 @@
+.otp {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3.8rem;
+  height: 60px;
+  background-color: #ff543e80;
+  position: fixed;
+  z-index: 100;
+  max-width: 1400px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.speakericon {
+  font-size: 24px; /* Adjust the size of the icon as needed */
+}
+
+.otp p {
+  display: inline-block;
+  white-space: nowrap; /* Ensure the text doesn't wrap */
+  position: absolute;
+  animation: moveInOut 20s linear infinite; /* Animation for continuous moving effect */
+}
+
+@keyframes moveInOut {
+  0% {
+    left: 100%; /* Start from the right side outside the container */
+  }
+  50% {
+    left: 0%; /* Move to the left side inside the container */
+  }
+  100% {
+    left: -100%; /* Move to the left side outside the container */
+  }
+}
