@@ -1,9 +1,9 @@
-import Mainwatch from "./assets/imgs/smart34.png";
+import Mainwatch from "./assets/imgs/Smart3.png";
 import headphone from "./assets/imgs/headphone.png";
 import lappy from "./assets/imgs/Laptop1.png";
 import mic from "./assets/imgs/microphone.jpg";
 import Tv from "./assets/imgs/tv.png";
-import mixer from "./assets/imgs/Iron.png";
+import Alarmclock from "./assets/imgs/clock2.png";
 
 export const Products = [
   {
@@ -32,10 +32,10 @@ export const Products = [
   },
   {
     id: 4,
-    title: "binatone mixer",
+    title: "Alarm Clock",
     currentPrice: "#300,000",
     originalPrice: "#500,000",
-    img: mixer,
+    img: Alarmclock,
     class: "resize3",
   },
   {

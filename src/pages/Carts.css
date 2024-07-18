@@ -219,6 +219,13 @@
 .clear-cart {
   background-color: #e74c3c;
 }
+
+.delete-icon {
+  cursor: pointer;
+  right: 0;
+  top: 0;
+}
+
 @media screen and (max-width: 768px) {
   .cart-page {
     padding: 20px;

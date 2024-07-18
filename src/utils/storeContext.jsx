@@ -9,6 +9,8 @@ export const StoreProvider = ({ children }) => {
   });
   const [totalCartItems, setTotalCartItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -16,7 +18,21 @@ export const StoreProvider = ({ children }) => {
     calculateTotalPrice();
   }, [cartItems]);
 
+  const fetchProducts = (page) => {
+    fetch(
+      `/api/products?organization_id=e8464762ed974522901916e19534bbc4&reverse_sort=false&page=${page}&size=${9}&Appid=P8YBKXYR5Q3ZBBI&Apikey=e5bc75a2d1cf414c80cfb6cde20f091720240714131238325221`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data.items);
+        console.log(data);
+        setTotalPages(Math.ceil(data.total / 9));
+      })
+      .catch((error) => console.error("Error fetching products:", error));
+  };
+
   const addToCart = (product) => {
+    console.log("adding to cart", product);
     const existingProduct = cartItems.find((item) => item.id === product.id);
     if (existingProduct) {
       setCartItems(
@@ -60,7 +76,7 @@ export const StoreProvider = ({ children }) => {
 
   const calculateTotalPrice = () => {
     const totalPrice = cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity,
+      (acc, item) => acc + item.current_price?.[0]?.NGN?.[0] * item.quantity,
       0
     );
     setTotalPrice(totalPrice);
@@ -71,6 +87,8 @@ export const StoreProvider = ({ children }) => {
       value={{
         cartItems,
         totalCartItems,
+        fetchProducts,
+        products,
         addToCart,
         removeFromCart,
         increaseQuantity,
@@ -78,6 +96,8 @@ export const StoreProvider = ({ children }) => {
         clearCart,
         totalPrice,
         calculateTotalPrice,
+        totalPages,
+        setTotalPages,
       }}
     >
       {children}
